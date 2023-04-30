@@ -7,7 +7,7 @@ const errorHandler = require('./controller/errorControler');
 const app = express();
 
 // MIDDLEWARES
-
+app.set('view engine', 'ejs'); 
 app.use(express.json({ limit: '10kb'}));
 
 
