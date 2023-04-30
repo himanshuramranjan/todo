@@ -8,6 +8,9 @@ router
     .route('/')
     .get(todoController.getAllTodos)
     .post(todoController.createTodo)
+
+router
+    .route('/:id')
     .patch(todoController.updateTodo)
     .delete(todoController.deleteTodo)
 
