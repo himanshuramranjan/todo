@@ -13,11 +13,6 @@ app.use(express.urlencoded({extended: true}));
 
 // ROUTES
 app.use('/api/v1/todo', todoRouter);
-app.use('/', (req, res, next) => {
-    res.render('update', {
-        topic: "Random val"
-    });
-})
 app.use('*', (req, res, next) => {
     next(new AppError(`Cant find ${req.originalUrl}`, 404));
 });
