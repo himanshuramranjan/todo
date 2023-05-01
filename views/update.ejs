@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('_header') %>
+
+    <title>Update</title>
+  </head>
+  <body>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+                <div class="card-body py-4 px-4 px-md-5">
+      
+                  <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                    <u>My Todos</u>
+                  </p>
+                  <form action="/api/v1/todo/<%= todo[0].id%>" method="post">
+                  <div class="pb-2">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex flex-row align-items-center">
+                          <input type="text" class="form-control form-control-lg" 
+                          id="exampleFormControlInput1"
+                            name="topic" value="<%= todo[0].topic%>">
+                            <input type="text" class="form-control form-control-lg" 
+                            id="exampleFormControlInput1"
+                              name="detail" value="<%= todo[0].detail%>">
+                            
+                          <input type="date" id="dueDate" name="date" value="<%= todo[0].date%>">
+                          
+                          <div>
+                            <input type="submit" value="Submit">
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <%- include('_footer') %>
+  </body>
+</html>

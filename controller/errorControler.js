@@ -1,3 +1,4 @@
+// send the data to developer
 const sendErrorDev = (err, res) => {
     res.status(err.statusCode).json({
         status: err.status,
@@ -5,6 +6,8 @@ const sendErrorDev = (err, res) => {
         message: err.message
     });
 }
+
+// impart initial check
 module.exports = (err, req, res, next) => {
 
     err.statusCode = err.statusCode || 500;

@@ -3,16 +3,19 @@ const todoController = require('../controller/todoController');
 
 const router = express.Router();
 
-
 router
     .route('/')
     .get(todoController.getAllTodos)
     .post(todoController.createTodo)
 
+router  
+    .route('/remove/:id')
+    .get(todoController.deleteTodo);
+
 router
     .route('/:id')
-    .patch(todoController.updateTodo)
-    .delete(todoController.deleteTodo)
+    .get(todoController.getTodo)
+    .post(todoController.updateTodo)
 
 module.exports = router;
 

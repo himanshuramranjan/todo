@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const todoSchema = new mongoose.Schema({
     topic: {
         type: String,
-        required: [true, 'Todo topic is required'],
-        unique: true
+        required: [true, 'Todo topic is required']
     },
     detail: {
         type: String,
@@ -15,8 +14,6 @@ const todoSchema = new mongoose.Schema({
         required: [true, 'Date is required for todo']
     }
 });
-
-// Doc Middleware Query to change to uppercase before saving [IMPLEMENT]
 
 const Todo = mongoose.model('Todo', todoSchema);
 
